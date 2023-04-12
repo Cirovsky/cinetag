@@ -10,4 +10,8 @@ configurando caminho absoluto com o vite:
 
 <code>npm i vite-jsconfig-paths</code>
 
-[documentação vite-js-config](https://www.npmjs.com/package/vite-jsconfig-paths);
+[documentação vite-js-config](https://www.npmjs.com/package/vite-jsconfig-paths)
+
+instalado react-router-dom:
+
+<code>npm install react-router-dom<code>
