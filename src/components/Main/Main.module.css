@@ -1,0 +1,6 @@
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    color: black;
+    background-color: #F5F5F5;
+}

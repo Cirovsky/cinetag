@@ -1,0 +1,4 @@
+.navBar{
+    display: flex;
+    column-gap: 4.5rem;
+}

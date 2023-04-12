@@ -1,0 +1,11 @@
+.container{
+    background-color: black;
+    color: #F0F0F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 350px;
+    height: 88px;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
