@@ -2,11 +2,19 @@ import Card from "components/Card";
 import styles from "./Cards.module.css";
 import { useHref } from "react-router-dom";
 import { useFavoritosContext } from "common/contexts/favoritos";
-import { UseVideosContext } from "common/contexts/videosContext";
+import { useEffect, useState } from "react";
 
 export default function Cards() {
 
-    const {videos} = UseVideosContext();
+    const [videos, setVideos] = useState([]);
+
+    useEffect(() => {
+        fetch('https://my-json-server.typicode.com/Cirovsky/cinetag-api/videos')
+        .then(resposta => resposta.json())
+        .then(dados => {
+            setVideos(dados)
+        });
+    }, [])
 
     const href = useHref();
     const {favoritos} = useFavoritosContext();
