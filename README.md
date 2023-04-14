@@ -15,3 +15,7 @@ configurando caminho absoluto com o vite:
 instalado react-router-dom:
 
 <code>npm install react-router-dom<code>
+
+instalando react-icons:
+
+<code>npm install react-icons --save<code>

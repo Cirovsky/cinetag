@@ -1,17 +1,18 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useHref, useParams } from "react-router-dom";
-import BannerHome from 'assets/imagens/banner-home.png';
-import BannerFavoritos from 'assets/imagens/banner-favoritos.png';
-import BannerPlayer from 'assets/imagens/banner-player.png';
-import Home from "pages/Home";
+import BannerHome from '/imagens/banner-home.png';
+import BannerFavoritos from '/imagens/banner-favoritos.png';
+import BannerPlayer from '/imagens/banner-player.png';
 
 export const BannerContext = createContext();
 
+BannerContext.displayName = "banner"
+
 export const BannerProvider = ({ children }) => {
     const href = useHref();
-    const [banner, setBanner] = useState(BannerHome);
+    const [banner, setBanner] = useState({});
     return (
-        <BannerContext.Provider value={{ href, banner, setBanner }}>
+        <BannerContext.Provider value={{ href, banner, setBanner, }}>
             {children}
         </BannerContext.Provider>
     )
@@ -20,22 +21,29 @@ export const BannerProvider = ({ children }) => {
 export const useBannerContext = () => {
     const { href, banner, setBanner } = useContext(BannerContext);
     const id = useParams().id;
-    
-    useEffect(() => {
+
+    function bannerObserver(){
         switch(href){
             case '/':
-                setBanner(BannerHome);
+                setBanner({image: BannerHome, classBanner: "bannerHome"});
                 break;
             case '/favoritos':
-                setBanner(BannerFavoritos);
+                setBanner({image: BannerFavoritos, classBanner: "bannerFavorito"});
                 break;
             case `/player/${id}`:
-                setBanner(BannerPlayer);
+                setBanner({image: BannerPlayer, classBanner: "bannerPlayer"});
+                break;
+            default:
+                setBanner({image: BannerHome, classBanner: "wherever"});
                 break;
         }
-    },[href, banner, setBanner]);
+    }
+    
+    useEffect(() => {
+        bannerObserver();
+    },[href, banner.image, banner.classBanner]);
     return {
-        banner
+        banner,
     }
 }
 

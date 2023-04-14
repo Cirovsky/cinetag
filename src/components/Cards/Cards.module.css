@@ -1,0 +1,12 @@
+.cards{
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+    font-size: 1.125rem;
+    width: 70vw;
+}
+
+.favoritos{
+    justify-content: flex-start;
+    
+}

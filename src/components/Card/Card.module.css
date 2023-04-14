@@ -1,0 +1,22 @@
+.card{
+}
+
+.card h3{
+    font-size: 1.125em;
+    line-height: 1.25rem;
+    font-weight: 700;
+    width: 14.25em;
+    margin: 1rem auto 0 1.6rem;
+    min-height: 76px;
+}
+
+.fav{
+    margin-left: 1.6rem;
+    cursor: pointer;
+    display: block;
+}
+
+.fav svg{
+    width: 1.5rem;
+    height: 1.5rem;
+}
